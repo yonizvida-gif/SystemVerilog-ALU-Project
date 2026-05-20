@@ -53,7 +53,7 @@ To validate the robustness of the ALU-Memory subsystem, extensive simulations we
 ### 1. Automated Verification (Scoreboard Output)
 The simulation log below demonstrates the automated self-checking mechanism of the Scoreboard. Every generated transaction was monitored, compared against the reference model, and verified with zero mismatches.
 
-![Scoreboard Display](./imags/display.png)
+![Scoreboard Display](./image/display.png)
 *Figure 1: Synopsys VCS simulation log showing automated self-checking with a 100% transaction match and zero errors.*
 
 ### 2. Waveform Analysis (Debug via Verdi)
