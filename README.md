@@ -53,13 +53,13 @@ To validate the robustness of the ALU-Memory subsystem, extensive simulations we
 ### 1. Automated Verification (Scoreboard Output)
 The simulation log below demonstrates the automated self-checking mechanism of the Scoreboard. Every generated transaction was monitored, compared against the reference model, and verified with zero mismatches.
 
-![Scoreboard Display](./images/display.png)
+![Scoreboard Display](./imags/display.png)
 *Figure 1: Synopsys VCS simulation log showing automated self-checking with a 100% transaction match and zero errors.*
 
 ### 2. Waveform Analysis (Debug via Verdi)
 The timing diagram captured during the simulation illustrates the synchronous data transfer across the virtual interface (`alu_mem_if`). 
 
-![Simulation Waveform](./images/waveform.png)
+![Simulation Waveform](./image/waveform.png)
 *Figure 2: Waveform analysis in Verdi GUI demonstrating clocking block synchronization, modport enforcement, and race-condition-free data sampling between the testbench and the DUT.*
 
 
