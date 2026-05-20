@@ -1,41 +1,44 @@
-SystemVerilog ALU-Memory Verification Project
-Overview
-This repository contains a comprehensive SystemVerilog Verification Environment for an ALU-Memory Subsystem. The project demonstrates advanced verification methodologies, including Constrained Random Verification (CRV) and Object-Oriented Programming (OOP), to ensure the functional integrity of a hardware design
-.
-Design Under Test (DUT)
-The DUT is a unified module (alu_mem) consisting of:
-ALU: Supports arithmetic operations with parameterized data widths
-.
-Memory Unit: Includes internal registers for operands (A, B), operation codes (op), and execution triggers
-.
-Interface: A modular alu_mem_if connecting the testbench and design via specialized modports and clocking blocks to prevent race conditions
-.
-Verification Environment Architecture
-The testbench follows a Layered Architecture to promote modularity and reusability
-:
-Generator: Generates randomized transactions, including specialized sequences for corner cases like Division by Zero and Overflow
-.
-Driver: Injects transactions into the virtual interface
-.
-Monitors: Divided into monitor_in (sampling inputs) and monitor_out (sampling DUT results) for precise data tracking
-.
-Scoreboard: Performs automated self-checking by comparing expected results against actual DUT outputs using Mailboxes and Queues
-.
-Environment & Test: Encapsulate all components and manage the simulation phases
-.
-Key Features
-CRV (Constrained Random Verification): Used to reach high functional coverage
-.
-OOP Implementation: Extensive use of inheritance (e.g., good_tran extending transaction) and polymorphism
-.
-Dynamic Data Handling: Synchronization of data streams using SystemVerilog Mailboxes
-.
-How to Run
-Ensure you have a SystemVerilog simulator (e.g., Vivado, Questa, or VCS).
-Compile the files starting from the top module: tb_top.sv.
-Run the simulation to see the scoreboard validation results.
-Author
-Yonatan Zvida - Junior FPGA / VLSI Engineer
-.
+# SystemVerilog ALU-Memory Verification Project
 
---------------------------------------------------------------------------------
+## 📌 Overview
+This repository contains a comprehensive, **Object-Oriented Programming (OOP)** based SystemVerilog Verification Environment for an ALU-Memory Subsystem. The project demonstrates advanced Pre-Silicon verification methodologies, including **Constrained Random Verification (CRV)** and automated self-checking architectures, to ensure the functional integrity of the hardware design.
+
+---
+
+## 🛠️ Design Under Test (DUT)
+The DUT is a unified module (`alu_mem`) consisting of:
+* **ALU:** Supports parameterized arithmetic and logic operations.
+* **Memory Unit:** Includes internal registers for operands (A, B), operation codes (op), and execution triggers.
+* **Interface:** A modular `alu_mem_if` connecting the testbench and design via specialized **modports** and **clocking blocks** to ensure synchronous data sampling and prevent race conditions.
+
+---
+
+## 🏗️ Verification Environment Architecture
+The testbench follows a modern **Layered Architecture** to promote modularity and reusability:
+
+* **Generator:** Creates randomized stimulus transactions, including constrained sequences for corner cases like *Division by Zero* and *Arithmetic Overflow*.
+* **Driver:** Receives transactions from the generator and injects them into the virtual interface.
+* **Monitors:** Split into `monitor_in` (sampling inputs post-driver) and `monitor_out` (sampling DUT execution results) for precise, independent data tracking.
+* **Scoreboard:** Performs automated, real-time self-checking by predicting expected results and comparing them against actual DUT outputs using **Mailboxes** and **Queues**.
+* **Environment & Test:** Encapsulate all verification components and manage simulation execution phases.
+
+---
+
+## 🚀 Key Features
+* **Constrained Random Verification (CRV):** Leveraged to maximize functional coverage and stress corner-case scenarios.
+* **OOP Implementation:** Full utilization of object-oriented principles, including inheritance (e.g., `good_tran` extending the base transaction class) and polymorphism.
+* **Dynamic Data Handling:** Safe and synchronized data stream handling using SystemVerilog Mailboxes.
+* **Advanced Debugging:** Seamless integration with industry-standard debugging tools.
+
+---
+
+## 💻 Tools & Simulation
+The environment is simulator-agnostic but fully verified using industry-standard EDA tools:
+* **Simulation:** Synopsys VCS / Xilinx Vivado / QuestaSim
+* **Debugging:** Verdi GUI for advanced waveform analysis and signal tracing
+
+### How to Run (VCS Example)
+To compile and run the simulation using Synopsys VCS, execute:
+```bash
+vcs -sverilog -debug_access+all tb_top.sv alu_mem.sv
+./simv
