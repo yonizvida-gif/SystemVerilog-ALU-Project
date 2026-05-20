@@ -24,6 +24,24 @@ The testbench follows a modern **Layered Architecture** to promote modularity an
 
 ---
 
+## 📊 Simulation & Verification Results
+
+To validate the robustness of the ALU-Memory subsystem, extensive simulations were executed. The testbench successfully verified all transactions, achieving full functional coverage across constrained-random stimulus and corner-case scenarios.
+
+### 1. Automated Verification (Scoreboard Output)
+The simulation log below demonstrates the automated self-checking mechanism of the Scoreboard. Every generated transaction was monitored, compared against the reference model, and verified with zero mismatches.
+
+![Scoreboard Display](image/display.png)
+*Figure 1: Synopsys VCS simulation log showing automated self-checking with a 100% transaction match and zero errors.*
+
+### 2. Waveform Analysis (Debug via Verdi)
+The timing diagram captured during the simulation illustrates the synchronous data transfer across the virtual interface (`alu_mem_if`). 
+
+![Simulation Waveform](image/waveform.png)
+*Figure 2: Waveform analysis in Verdi GUI demonstrating clocking block synchronization, modport enforcement, and race-condition-free data sampling between the testbench and the DUT.*
+
+---
+
 ## 🚀 Key Features
 * **Constrained Random Verification (CRV):** Leveraged to maximize functional coverage and stress corner-case scenarios.
 * **OOP Implementation:** Full utilization of object-oriented principles, including inheritance (e.g., `good_tran` extending the base transaction class) and polymorphism.
@@ -46,23 +64,6 @@ vcs -sverilog -debug_access+all tb_top.sv alu_mem.sv
 
 
 ---
-
-## 📊 Simulation & Verification Results
-
-To validate the robustness of the ALU-Memory subsystem, extensive simulations were executed. The testbench successfully verified all transactions, achieving full functional coverage across constrained-random stimulus and corner-case scenarios.
-
-### 1. Automated Verification (Scoreboard Output)
-The simulation log below demonstrates the automated self-checking mechanism of the Scoreboard. Every generated transaction was monitored, compared against the reference model, and verified with zero mismatches.
-
-![Scoreboard Display](image/display.png)
-*Figure 1: Synopsys VCS simulation log showing automated self-checking with a 100% transaction match and zero errors.*
-
-### 2. Waveform Analysis (Debug via Verdi)
-The timing diagram captured during the simulation illustrates the synchronous data transfer across the virtual interface (`alu_mem_if`). 
-
-![Simulation Waveform](image/waveform.png)
-*Figure 2: Waveform analysis in Verdi GUI demonstrating clocking block synchronization, modport enforcement, and race-condition-free data sampling between the testbench and the DUT.*
-
 
 
 
