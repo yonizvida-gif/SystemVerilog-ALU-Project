@@ -54,13 +54,3 @@ The timing diagram captured during the simulation illustrates the synchronous da
 The environment is simulator-agnostic but fully verified using industry-standard EDA tools:
 * **Simulation:** Synopsys VCS 
 * **Debugging:** Verdi GUI for advanced waveform analysis and signal tracing
-
-### How to Run (VCS Example)
-To compile and run the simulation using Synopsys VCS, execute:
-
-```bash
-vcs -sverilog -debug_access+all tb_top.sv alu_mem.sv
-./simv
-
-
----
