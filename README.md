@@ -39,6 +39,7 @@ The environment is simulator-agnostic but fully verified using industry-standard
 
 ### How to Run (VCS Example)
 To compile and run the simulation using Synopsys VCS, execute:
+
 ```bash
 vcs -sverilog -debug_access+all tb_top.sv alu_mem.sv
 ./simv
