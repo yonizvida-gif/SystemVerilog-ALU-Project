@@ -64,12 +64,3 @@ vcs -sverilog -debug_access+all tb_top.sv alu_mem.sv
 
 
 ---
-
-
-
-
-
-
-
-
-
