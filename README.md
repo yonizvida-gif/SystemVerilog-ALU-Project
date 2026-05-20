@@ -34,7 +34,7 @@ The testbench follows a modern **Layered Architecture** to promote modularity an
 
 ## 💻 Tools & Simulation
 The environment is simulator-agnostic but fully verified using industry-standard EDA tools:
-* **Simulation:** Synopsys VCS / Xilinx Vivado / QuestaSim
+* **Simulation:** Synopsys VCS 
 * **Debugging:** Verdi GUI for advanced waveform analysis and signal tracing
 
 ### How to Run (VCS Example)
