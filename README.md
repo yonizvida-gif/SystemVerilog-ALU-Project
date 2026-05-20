@@ -26,7 +26,7 @@ The testbench follows a modern **Layered Architecture** to promote modularity an
 
 ## 📊 Simulation & Verification Results
 
-To validate the robustness of the ALU-Memory subsystem, extensive simulations were executed. The testbench successfully verified all transactions, achieving full functional coverage across constrained-random stimulus and corner-case scenarios.
+To validate the robustness of the ALU-Memory subsystem, extensive simulations were executed. The testbench successfully verified all transactions, driving and validating a wide range of constrained-random stimuli and complex corner-case scenarios.
 
 ### 1. Automated Verification (Scoreboard Output)
 The simulation log below demonstrates the automated self-checking mechanism of the Scoreboard. Every generated transaction was monitored, compared against the reference model, and verified with zero mismatches.
