@@ -11,6 +11,9 @@ The DUT is a unified module (`alu_mem`) consisting of:
 * **Memory Unit:** Includes internal registers for operands (A, B), operation codes (op), and execution triggers.
 * **Interface:** A modular `alu_mem_if` connecting the testbench and design via specialized **modports** and **clocking blocks** to ensure synchronous data sampling and prevent race conditions.
 
+![System Specification](images/ALU_Memory_Spec.png)
+*Figure: Technical specification and 1-clock cycle read latency timing diagram of the ALU-Memory Subsystem.*
+
 ---
 
 ## 🏗️ Verification Environment Architecture
