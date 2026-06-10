@@ -54,7 +54,7 @@ Verification quality is measured through:
 1. **Automated Verification:** Zero mismatches recorded in the Scoreboard.
 2. **Waveform Debugging:** Verdi analysis confirms signal timing and logic validity.
 
-![Waveform Analysis](image/Verdi_Waveform.png)
+![Waveform Analysis](image/Waveform.png)
 *Figure: Waveform analysis demonstrating synchronous data transfer.*
 
 ---
