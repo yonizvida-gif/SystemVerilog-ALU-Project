@@ -12,6 +12,7 @@ The `alu_mem` module integrates an ALU and a Register Bank.
 * **Interface:** Modular `alu_mem_if` with modports and clocking blocks.
 
 ![System Specification](image/ALU_Memory_Spec.png)
+
 *Figure: Technical specification of the ALU-Memory Subsystem.*
 
 ---
