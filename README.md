@@ -11,7 +11,7 @@ The `alu_mem` module integrates an ALU and a Register Bank.
 * **Memory Unit:** Operands (A, B), Opcode, and Execution trigger.
 * **Interface:** Modular `alu_mem_if` with modports and clocking blocks.
 
-![System Specification](images/ALU_Memory_Spec.png)
+![System Specification](image/ALU_Memory_Spec.png)
 *Figure: Technical specification of the ALU-Memory Subsystem.*
 
 ---
@@ -23,7 +23,7 @@ The environment follows a layered, modular architecture:
 * **Monitors:** Independent `monitor_in` and `monitor_out` for precise tracking.
 * **Scoreboard:** Real-time self-checking via Mailboxes.
 
-![Architecture Diagram](images/Environment_Architecture.png)
+![Architecture Diagram](image/Environment_Architecture.png)
 *Figure: Layered Verification Environment Architecture.*
 
 ---
@@ -34,7 +34,7 @@ We implemented Concurrent Assertions (SVA) to monitor:
 * **Arithmetic Integrity:** Division-by-zero validation (`0xDEAD`).
 * **Stability:** Register bank reserved bits and idle output stability.
 
-![Assertion Coverage](images/Assertion_Results.png)
+![Assertion Coverage](image/Assertion_Results.png)
 *Figure: Assertion-based verification pass/fail status.*
 
 ---
@@ -44,7 +44,7 @@ Verification quality is measured through:
 * **Code Coverage:** Statement, branch, and toggle coverage.
 * **Functional Coverage:** Opcode coverage, cross-coverage, and bins analysis.
 
-![Coverage Report](images/Coverage_Summary.png)
+![Coverage Report](image/Coverage_Summary.png)
 *Figure: Functional and Code coverage metrics summary.*
 
 ---
@@ -53,7 +53,7 @@ Verification quality is measured through:
 1. **Automated Verification:** Zero mismatches recorded in the Scoreboard.
 2. **Waveform Debugging:** Verdi analysis confirms signal timing and logic validity.
 
-![Waveform Analysis](images/Verdi_Waveform.png)
+![Waveform Analysis](image/Verdi_Waveform.png)
 *Figure: Waveform analysis demonstrating synchronous data transfer.*
 
 ---
