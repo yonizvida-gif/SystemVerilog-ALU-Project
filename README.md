@@ -7,6 +7,26 @@ The primary goal was to verify RTL functionality, identify design bugs, and achi
 
 ---
 
+## 🚀 Key Features
+
+* Object-Oriented SystemVerilog Verification Environment
+* Constrained-Random Verification (CRV)
+* Assertion-Based Verification using SVA
+* Functional and Code Coverage Closure
+* Self-Checking Scoreboard Architecture
+* Mailbox-Based Communication
+* RTL Debug and Bug Discovery
+
+ ---
+
+ ## 💻 Tools
+
+* SystemVerilog
+* Synopsys VCS
+* Synopsys Verdi
+
+---
+
 ## 🛠️ Design Under Test (DUT)
 The DUT consists of:
 * **ALU:** Supports arithmetic operations: Addition (ADD), Subtraction (SUB), Multiplication (MUL), and Division (DIV).
@@ -28,7 +48,7 @@ A modular OOP-based verification environment was developed using SystemVerilog c
 * **Input Monitor:** Captures DUT inputs and sends observed transactions to the Scoreboard.
 * **Output Monitor:** Captures DUT outputs and tracks actual DUT behavior.
 * **Scoreboard:** Implements automatic result checking, compares expected and actual results, and reports mismatches or functional errors.
-* **Coverage Collector:** Collects functional coverage, tracking opcode combinations and corner cases.
+* **Coverage:** Collects functional coverage, tracking opcode combinations and corner cases.
 
 Communication between components is implemented using SystemVerilog Mailboxes.
 
