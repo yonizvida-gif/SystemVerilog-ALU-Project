@@ -47,7 +47,7 @@ The environment generates randomized transactions while enforcing legal DUT cons
 
 This approach maximized state-space exploration and improved bug detection efficiency.
 
-### Assertion-Based Verification (SVA)
+### SystemVerilog Assertions (SVA)
 SystemVerilog Assertions were implemented to verify protocol correctness, timing relationships, division-by-zero behavior, output stability requirements, and register-bank integrity. Assertions enabled automatic detection of protocol and functional violations during simulation.
 
 ![Assertion Coverage](image/Assertion_Results.png)
