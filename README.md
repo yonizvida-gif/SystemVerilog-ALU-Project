@@ -77,205 +77,150 @@ Verification quality is measured through:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # SystemVerilog ALU & Register-Bank Verification Environment
 
-## Overview
-
-This project demonstrates the development of a complete Object-Oriented SystemVerilog verification environment for an ALU and Register-Bank subsystem.
-
-The verification environment was built from scratch using industry-standard verification concepts, including Constrained-Random Verification (CRV), Assertion-Based Verification (ABV), Functional Coverage, Code Coverage, and self-checking mechanisms.
-
+## 📌 Overview
+This project demonstrates the development of a complete Object-Oriented SystemVerilog verification environment for an ALU and Register-Bank subsystem. 
+The verification environment was built from scratch using industry-standard verification concepts, including Constrained-Random Verification (CRV), Assertion-Based Verification (ABV), Functional Coverage, Code Coverage, and self-checking mechanisms. 
 The primary goal was to verify RTL functionality, identify design bugs, and achieve verification closure through coverage-driven methodologies.
 
 ---
 
-## Design Under Test (DUT)
-
+## 🛠️ Design Under Test (DUT)
 The DUT consists of:
-
-### ALU
-
-Supports arithmetic operations:
-
-* Addition (ADD)
-* Subtraction (SUB)
-* Multiplication (MUL)
-* Division (DIV)
-
-### Register Bank
-
-Stores:
-
-* Operand A
-* Operand B
-* Opcode
-* Execute control signal
+* **ALU:** Supports arithmetic operations: Addition (ADD), Subtraction (SUB), Multiplication (MUL), and Division (DIV).
+* **Register Bank:** Stores Operand A, Operand B, Opcode, and the Execute control signal.
 
 The ALU and Register Bank are integrated into a single subsystem that receives commands, executes operations, and generates results.
 
+![System Specification](image/ALU_Memory_Spec.png)
+*Figure: Technical specification of the ALU-Memory Subsystem.*
+
 ---
 
-## Verification Environment Architecture
-
+## 🏗️ Verification Environment Architecture
 A modular OOP-based verification environment was developed using SystemVerilog classes and Mailbox-based communication.
 
 ### Components
-
-* **Generator**
-
-  * Creates constrained-random and directed transactions.
-  * Supports specialized scenarios such as division-by-zero testing.
-
-* **Driver**
-
-  * Converts transactions into DUT stimulus.
-  * Drives signals through the virtual interface.
-
-* **Input Monitor**
-
-  * Captures DUT inputs.
-  * Sends observed transactions to the Scoreboard.
-
-* **Output Monitor**
-
-  * Captures DUT outputs.
-  * Tracks actual DUT behavior.
-
-* **Scoreboard**
-
-  * Implements automatic result checking.
-  * Compares expected and actual results.
-  * Reports mismatches and functional errors.
-
-* **Coverage Collector**
-
-  * Collects functional coverage.
-  * Tracks opcode combinations and corner cases.
+* **Generator:** Creates constrained-random and directed transactions. Supports specialized scenarios such as division-by-zero testing.
+* **Driver:** Converts transactions into DUT stimulus and drives signals through the virtual interface.
+* **Input Monitor:** Captures DUT inputs and sends observed transactions to the Scoreboard.
+* **Output Monitor:** Captures DUT outputs and tracks actual DUT behavior.
+* **Scoreboard:** Implements automatic result checking, compares expected and actual results, and reports mismatches or functional errors.
+* **Coverage Collector:** Collects functional coverage, tracking opcode combinations and corner cases.
 
 Communication between components is implemented using SystemVerilog Mailboxes.
 
+![Architecture Diagram](image/Environment_Architecture.png)
+*Figure: Layered Verification Environment Architecture.*
+
 ---
 
-## Verification Methodology
+## 🛡️ Verification Methodology
 
 ### Constrained-Random Verification (CRV)
-
-The environment generates randomized transactions while enforcing legal DUT constraints.
-
-Verification included:
-
-* 20,000+ constrained-random transactions
-* Directed corner-case scenarios
-* Error-injection testing
-* Division-by-zero validation
+The environment generates randomized transactions while enforcing legal DUT constraints. Verification included:
+* **20,000+** constrained-random transactions.
+* Directed corner-case scenarios.
+* Error-injection testing & Division-by-zero validation.
 
 This approach maximized state-space exploration and improved bug detection efficiency.
 
----
+### Assertion-Based Verification (SVA)
+SystemVerilog Assertions were implemented to verify protocol correctness, timing relationships, division-by-zero behavior, output stability requirements, and register-bank integrity. Assertions enabled automatic detection of protocol and functional violations during simulation.
 
-## Assertion-Based Verification (SVA)
-
-SystemVerilog Assertions were implemented to verify:
-
-* Protocol correctness
-* Timing relationships
-* Division-by-zero behavior
-* Output stability requirements
-* Register-bank integrity
-
-Assertions enabled automatic detection of protocol and functional violations during simulation.
+![Assertion Coverage](image/Assertion_Results.png)
+*Figure: Assertion-based verification pass/fail status.*
 
 ---
 
-## Coverage-Driven Verification
+## 📈 Coverage-Driven Verification
 
 ### Functional Coverage
-
-Implemented using:
-
-* Covergroups
-* Coverpoints
-* Cross Coverage
-
-Coverage models tracked:
-
-* Opcode execution
-* Input combinations
-* Corner-case scenarios
-* Functional interactions
+Implemented using Covergroups, Coverpoints, and Cross Coverage to track opcode execution, input combinations, corner cases, and functional interactions.
 
 ### Code Coverage
-
-Measured using Synopsys VCS:
-
-* Statement Coverage
-* Branch Coverage
-* Toggle Coverage
+Measured using Synopsys VCS to track Statement Coverage, Branch Coverage, and Toggle Coverage.
 
 ### Coverage Closure
+* **100%** Functional Coverage achieved.
+* **100%** Code Coverage achieved.
 
-Results achieved:
-
-* 100% Functional Coverage
-* 100% Code Coverage
+![Coverage Report](image/Coverage_Summary.png)
+*Figure: Functional and Code coverage metrics summary.*
 
 ---
 
-## RTL Debug and Bug Discovery
-
+## 🔍 RTL Debug and Bug Discovery
 The verification environment successfully identified and isolated multiple RTL design issues during development.
 
 ### Examples of Bugs Found
+* Functional RTL logic errors.
+* Opcode handling issues.
+* Corner-case execution failures.
+* Protocol and timing violations.
 
-* Functional RTL logic errors
-* Opcode handling issues
-* Corner-case execution failures
-* Protocol and timing violations
-
-More than 5 functional RTL bugs were detected, debugged, and resolved throughout the verification process.
+**More than 5 functional RTL bugs** were detected, debugged, and resolved throughout the verification process.
 
 ---
 
-## Simulation Results
+## 📊 Simulation Results
 
 ### Verification Metrics
+* **20,000+** CRV transactions executed.
+* **5+** functional RTL bugs identified and debugged.
+* **100%** functional coverage achieved.
+* **100%** code coverage achieved.
+* **Zero** Scoreboard mismatches after verification closure.
 
-* 20,000+ CRV transactions executed
-* 5+ functional RTL bugs identified and debugged
-* 100% functional coverage achieved
-* 100% code coverage achieved
-* Zero Scoreboard mismatches after verification closure
-
----
-
-## Tools
-
-### Verification
-
-* SystemVerilog
-* Object-Oriented Programming (OOP)
-* Constrained-Random Verification (CRV)
-* SystemVerilog Assertions (SVA)
-
-### Simulation & Debug
-
-* Synopsys VCS
-* Synopsys Verdi
+![Waveform Analysis](image/Waveform.png)
+*Figure: Waveform analysis demonstrating synchronous data transfer.*
 
 ---
 
-## Key Skills Demonstrated
+## 🏃‍♂️ How to Run
+To compile and run the simulation with coverage enabled using Synopsys VCS:
+```bash
+# Using Makefile (if available in repository)
+make run_all
 
-* Design Verification
-* Verification Planning
-* Constrained-Random Verification
-* Assertion-Based Verification
-* Functional Coverage
-* Code Coverage
-* Coverage Closure
-* RTL Debug
-* Object-Oriented SystemVerilog
-* Self-Checking Testbench Architecture
-* Mailbox-Based Communication
-* Scoreboard Development
+# Or via direct command line call
+vcs -sverilog alu_mem_tb.sv -debug_access+all
 
