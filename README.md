@@ -84,8 +84,8 @@ Implemented using Covergroups, Coverpoints, and Cross Coverage to track opcode e
 Measured using Synopsys VCS to track Statement Coverage, Branch Coverage, and Toggle Coverage.
 
 ### Coverage Closure
-* **100%** Functional Coverage achieved.
-* **100%** Code Coverage achieved.
+* **100%** Functional Coverage closure
+* **100%** Code Coverage closure (Statement, Branch, Toggle)
 
 ![Coverage Report](image/Coverage_Summary.png)
 *Figure: Functional and Code coverage metrics summary.*
