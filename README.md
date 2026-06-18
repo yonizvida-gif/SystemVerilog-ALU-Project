@@ -2,7 +2,7 @@
 
 ## 📌 Overview
 This project demonstrates the development of a complete Object-Oriented SystemVerilog verification environment for an ALU and Register-Bank subsystem. 
-The verification environment was built from scratch using industry-standard verification concepts, including Constrained-Random Verification (CRV), Assertion-Based Verification (ABV), Functional Coverage, Code Coverage, and self-checking mechanisms. 
+The verification environment was built from scratch using industry-standard verification concepts, including Constrained-Random Verification (CRV), SystemVerilog Assertions (SVA), Functional Coverage, Code Coverage, and self-checking mechanisms. 
 The primary goal was to verify RTL functionality, identify design bugs, and achieve verification closure through coverage-driven methodologies.
 
 ---
