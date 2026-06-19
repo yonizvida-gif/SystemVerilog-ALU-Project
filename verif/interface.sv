@@ -25,15 +25,6 @@ interface alu_mem_if #(parameter DATA_WIDTH = 8, parameter RES_WIDTH = 2*DATA_WI
         input  wr_data, enable, rd_wr, addr, //check reset/clk !!!!!!!!!!!!!!!
         output res_out, rd_data
     ); 
-	
-	
-	modport tb_mp (
-        clocking drv_cb, 
-        clocking mon_cb,
-        input clk, reset,
-        output   wr_data, enable, rd_wr, addr, //check reset/clk !!!!!!!!!!!!!!!
-        input res_out, rd_data
-    ); 
 
 
 	
